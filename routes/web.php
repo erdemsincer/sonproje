@@ -1,10 +1,18 @@
 <?php
 
+use App\Http\Controllers\NoteController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Note routeleri
+Route::get('/notes',[NoteController::class,'index'])->name('notes_index');
+
+
+
+
 
 Route::middleware([
     'auth:sanctum',
