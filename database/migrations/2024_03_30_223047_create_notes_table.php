@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->string('title');
+            $table->text('content');
             $table->timestamps();
+          //ilişkilendirme
+            $table->foreign('user_id')->on('users')->references('id');
         });
     }
 
