@@ -8,6 +8,9 @@ Route::get('/', function () {
 });
 
 //Note routeleri
+
+Route::get('/notes/createPage',[NoteController::class,'createPage'])->name('notes_createPage');
+Route::post('notes/addNote',[NoteController::class,'addNote'])->name('notes_addNote');
 Route::get('/notes',[NoteController::class,'index'])->name('notes_index');
 
 
